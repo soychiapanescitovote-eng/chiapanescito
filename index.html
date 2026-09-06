@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte al celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChiapaneSCito | Pan Artesanal</title>
+
+    <meta
+        name="description"
+        content="ChiapaneSCito - Pan artesanal con sabor a hogar."
+    >
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8ed;
+            color: #3b2415;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffaf3 0%,
+                    #f7e7cf 100%
+                );
+
+            text-align: center;
+            padding: 25px 20px 60px;
+
+            border-bottom: 1px solid #ead4b8;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: block;
+
+            width: min(600px, 92vw);
+
+            height: auto;
+
+            max-height: 360px;
+
+            object-fit: contain;
+
+            margin: 0 auto 5px;
+
+            /* evita que el logo se vea deformado */
+        }
+
+
+        .titulo-principal {
+            font-size: clamp(30px, 5vw, 48px);
+
+            font-weight: 800;
+
+            color: #6d3515;
+
+            margin-top: 5px;
+        }
+
+
+        .subtitulo {
+            font-size: clamp(18px, 3vw, 25px);
+
+            font-weight: 600;
+
+            color: #7c451f;
+
+            margin-top: 5px;
+        }
+
+
+        .descripcion {
+            max-width: 760px;
+
+            margin: 12px auto 0;
+
+            font-size: 18px;
+
+            color: #594131;
+        }
+
+
+        /* =========================
+           BOTONES
+        ========================= */
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 24px;
+
+            padding: 15px 28px;
+
+            border-radius: 50px;
+
+            background: #168a3a;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 17px;
+
+            transition: 0.25s;
+        }
+
+
+        .boton:hover {
+            transform: translateY(-3px);
+
+            background: #106b2c;
+        }
+
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .contenedor {
+            width: 100%;
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 60px 20px;
+        }
+
+
+        /* =========================
+           TÍTULOS
+        ========================= */
+
+        .titulo-seccion {
+            text-align: center;
+
+            margin-bottom: 38px;
+        }
+
+
+        .titulo-seccion h2 {
+            font-size: clamp(29px, 4vw, 40px);
+
+            color: #6d3515;
+
+            margin-bottom: 8px;
+        }
+
+
+        .titulo-seccion p {
+            font-size: 17px;
+
+            color: #694c37;
+        }
+
+
+        /* =========================
+           BENEFICIOS
+        ========================= */
+
+        .beneficios {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-bottom: 65px;
+        }
+
+
+        .beneficio {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 28px 22px;
+
+            text-align: center;
+
+            border: 1px solid #f0dfca;
+
+            box-shadow:
+                0 6px 20px rgba(60, 35, 15, 0.10);
+        }
+
+
+        .icono {
+            font-size: 43px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .beneficio h3 {
+            font-size: 22px;
+
+            color: #6d3515;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           PRODUCTOS
+        ========================= */
+
+        .productos {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+
+        .producto {
+            position: relative;
+
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 32px 22px;
+
+            text-align: center;
+
+            border: 1px solid #f0dfca;
+
+            box-shadow:
+                0 7px 22px rgba(60, 35, 15, 0.12);
+
+            transition: 0.25s;
+        }
+
+
+        .producto:hover {
+            transform: translateY(-6px);
+        }
+
+
+        .producto.destacado {
+            border: 3px solid #d28a32;
+        }
+
+
+        .etiqueta {
+            display: inline-block;
+
+            background: #d28a32;
+
+            color: white;
+
+            padding: 6px 15px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 14px;
+        }
+
+
+        .producto h3 {
+            font-size: 28px;
+
+            color: #6d3515;
+
+            margin-bottom: 8px;
+        }
+
+
+        .cantidad {
+            font-size: 17px;
+
+            color: #5f4635;
+        }
+
+
+        .precio {
+            font-size: 40px;
+
+            font-weight: 800;
+
+            color: #8a451c;
+
+            margin: 13px 0;
+        }
+
+
+        .producto ul {
+            list-style: none;
+
+            margin: 20px 0;
+        }
+
+
+        .producto li {
+            margin: 7px 0;
+        }
+
+
+        /* =========================
+           SECCIÓN NEGOCIOS
+        ========================= */
+
+        .negocio {
+            background: #f0dcc0;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            padding: 48px 25px;
+
+            margin-top: 60px;
+        }
+
+
+        .negocio h2 {
+            font-size: clamp(28px, 4vw, 36px);
+
+            color: #6d3515;
+
+            margin-bottom: 12px;
+        }
+
+
+        .negocio p {
+            max-width: 780px;
+
+            margin: auto;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           LLAMADA FINAL
+        ========================= */
+
+        .cta {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6d3515,
+                    #8d4a1f
+                );
+
+            color: white;
+
+            padding: 60px 20px;
+        }
+
+
+        .cta h2 {
+            font-size: clamp(28px, 4vw, 38px);
+
+            margin-bottom: 10px;
+        }
+
+
+        .cta p {
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            background: #29170d;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px 15px;
+        }
+
+
+        footer p {
+            margin: 4px 0;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .beneficios {
+                grid-template-columns: 1fr;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                width: min(500px, 95vw);
+                max-height: 300px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 15px 12px 45px;
+            }
+
+            .logo {
+                width: 96vw;
+                max-height: 260px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+
+            .contenedor {
+                padding: 45px 15px;
+            }
+
+            .producto {
+                padding: 28px 18px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
+
+    <header>
+
+        <!--
+            IMPORTANTE:
+            Este archivo debe estar junto a:
+            logo-chiapanescito.png
+        -->
+
+        <img
+            class="logo"
+            src="logo-chiapanescito.png"
+            alt="ChiapaneSCito - Pan Artesanal"
+        >
+
+
+        <div class="titulo-principal">
+            PAN ARTESANAL
+        </div>
+
+
+        <div class="subtitulo">
+            Con sabor a hogar
+        </div>
+
+
+        <p class="descripcion">
+            Pan caliente y recién hecho para tiendas,
+            cafeterías, negocios y puntos de venta.
+        </p>
+
+
+        <a
+            class="boton"
+            href="https://wa.me/529616581640?text=Hola,%20quiero%20información%20de%20ChiapaneSCito"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📲 PEDIR POR WHATSAPP
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
+
+    <main class="contenedor">
+
+
+        <!-- BENEFICIOS -->
+
+        <section>
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    ¿Por qué elegir ChiapaneSCito?
+                </h2>
+
+                <p>
+                    El sabor tradicional para tu negocio.
+                </p>
+
+            </div>
+
+
+            <div class="beneficios">
+
+
+                <div class="beneficio">
+
+                    <div class="icono">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Pan caliente
+                    </h3>
+
+                    <p>
+                        Producto recién hecho para
+                        ofrecer a tus clientes.
+                    </p>
+
+                </div>
+
+
+
+                <div class="beneficio">
+
+                    <div class="icono">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Sabor a hogar
+                    </h3>
+
+                    <p>
+                        Pan artesanal inspirado en
+                        los sabores tradicionales.
+                    </p>
+
+                </div>
+
+
+
+                <div class="beneficio">
+
+                    <div class="icono">
+                        🏪
+                    </div>
+
+                    <h3>
+                        Para negocios
+                    </h3>
+
+                    <p>
+                        Opciones para tiendas,
+                        cafeterías y puntos de venta.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PAQUETES
+        ========================= -->
+
+        <section id="paquetes">
+
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    Nuestros paquetes
+                </h2>
+
+                <p>
+                    Elige la opción que mejor se adapte
+                    a tu negocio.
+                </p>
+
+            </div>
+
+
+
+            <div class="productos">
+
+
+                <!-- TRADICIONAL -->
+
+                <article class="producto">
+
+                    <h3>
+                        Tradicional
+                    </h3>
+
+                    <div class="cantidad">
+                        100 piezas
+                    </div>
+
+                    <div class="precio">
+                        $400
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            ✓ 100 piezas
+                        </li>
+
+                        <li>
+                            ✓ Ideal para tiendas
+                        </li>
+
+                        <li>
+                            ✓ Para reventa
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        class="boton"
+                        href="https://wa.me/529616581640?text=Hola,%20quiero%20pedir%20el%20paquete%20Tradicional%20de%20100%20piezas"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        PEDIR AHORA
+                    </a>
+
+                </article>
+
+
+
+                <!-- ARTESANAL -->
+
+                <article class="producto">
+
+                    <h3>
+                        Artesanal
+                    </h3>
+
+                    <div class="cantidad">
+                        50 piezas
+                    </div>
+
+                    <div class="precio">
+                        $400
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            ✓ 50 piezas
+                        </li>
+
+                        <li>
+                            ✓ Pan artesanal
+                        </li>
+
+                        <li>
+                            ✓ Sabor a hogar
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        class="boton"
+                        href="https://wa.me/529616581640?text=Hola,%20quiero%20pedir%20el%20paquete%20Artesanal%20de%2050%20piezas"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        PEDIR AHORA
+                    </a>
+
+                </article>
+
+
+
+                <!-- COMBO -->
+
+                <article class="producto destacado">
+
+                    <div class="etiqueta">
+                        ⭐ MÁS PEDIDO
+                    </div>
+
+
+                    <h3>
+                        Combo
+                    </h3>
+
+
+                    <div class="cantidad">
+                        50 Tradicional + 25 Artesanal
+                    </div>
+
+
+                    <div class="precio">
+                        $400
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            ✓ 50 Tradicional
+                        </li>
+
+                        <li>
+                            ✓ 25 Artesanal
+                        </li>
+
+                        <li>
+                            ✓ Variedad para tus clientes
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        class="boton"
+                        href="https://wa.me/529616581640?text=Hola,%20quiero%20pedir%20el%20paquete%20Combo%20de%20$400"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        PEDIR AHORA
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             NEGOCIOS
+        ========================= -->
+
+        <section class="negocio">
+
+            <h2>
+                🏪 ¿Tienes una tienda o negocio?
+            </h2>
+
+
+            <p>
+                Lleva el sabor de ChiapaneSCito a tus clientes.
+                Pregunta por nuestros paquetes y comienza a
+                ofrecer pan artesanal en tu negocio.
+            </p>
+
+
+            <a
+                class="boton"
+                href="https://wa.me/529616581640?text=Hola,%20tengo%20un%20negocio%20y%20quiero%20vender%20ChiapaneSCito"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                QUIERO VENDER PAN
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         LLAMADA FINAL
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            ¿Listo para hacer tu pedido?
+        </h2>
+
+
+        <p>
+            Escríbenos directamente por WhatsApp.
+        </p>
+
+
+        <a
+            class="boton"
+            href="https://wa.me/529616581640?text=Hola,%20quiero%20hacer%20un%20pedido"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📲 HABLAR POR WHATSAPP
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
+
+    <footer>
+
+        <p>
+            <strong>ChiapaneSCito</strong>
+        </p>
+
+        <p>
+            Pan artesanal con sabor a hogar
+        </p>
+
+        <p>
+            © 2026 ChiapaneSCito
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
